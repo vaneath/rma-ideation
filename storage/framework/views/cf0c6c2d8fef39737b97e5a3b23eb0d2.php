@@ -12,3 +12,4 @@
         </div>
     </div>
 </footer>
+<?php /**PATH /home/vaneath/projects/rma-ideation/resources/views/layouts/footer.blade.php ENDPATH**/ ?>
