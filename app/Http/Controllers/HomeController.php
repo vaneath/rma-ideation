@@ -36,7 +36,7 @@ class HomeController extends Controller
 
     public function root()
     {
-        return view('wallet');
+        return view('dashboard-wallets');
     }
 
     /*Language Translation*/
