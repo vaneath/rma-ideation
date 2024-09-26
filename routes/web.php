@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,6 +21,7 @@ Route::get('index/{locale}', [App\Http\Controllers\HomeController::class, 'lang'
 Route::get('/', [App\Http\Controllers\HomeController::class, 'root'])->name('root');
 
 Route::get('admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.index')->middleware(middleware: ['auth','admin']);
+Route::resource('records', App\Http\Controllers\RecordController::class)->middleware(middleware: ['auth','admin']);
 
 //Update User Details
 Route::post('/update-profile/{id}', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('updateProfile');
