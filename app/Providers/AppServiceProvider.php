@@ -29,6 +29,10 @@ class AppServiceProvider extends ServiceProvider
     {
         //
         Schema::defaultStringLength(191);
+        Blade::if('user', function () {
+            // Assuming 'isAdmin' is a method in your User model that checks if the user is an admin
+            return Auth::check() && !Auth::user()->isAdmin();
+        });
         Blade::if('admin', function () {
             // Assuming 'isAdmin' is a method in your User model that checks if the user is an admin
             return Auth::check() && Auth::user()->isAdmin();

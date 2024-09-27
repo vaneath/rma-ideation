@@ -11,12 +11,14 @@
     <div id="scrollbar">
         <div class="container-fluid">
             <ul class="navbar-nav mt-5" id="navbar-nav">
-                <li class="nav-item">
-                    <a href="/wallets" class="nav-link">
-                        <i class="ri-dashboard-2-line"></i>
-                        <span>Wallets</span>
-                    </a>
-                </li>
+                @user
+                    <li class="nav-item">
+                        <a href="/wallets" class="nav-link">
+                            <i class="ri-dashboard-2-line"></i>
+                            <span>Wallets</span>
+                        </a>
+                    </li>
+                @enduser
 
                 @admin
                     <li class="nav-item">
