@@ -57,7 +57,7 @@ class RecordController extends Controller
     public function updateStatus(Request $request, $id)
     {
         $record = Record::findOrFail($id);
-        $user = $request->user();
+        $user = $record->user;
 
         if ($request->input('action') == 'approve') {
             $record->review_status = 'approved';
