@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Session;
+use App\Models\Section;
 
 class HomeController extends Controller
 {
@@ -36,10 +37,12 @@ class HomeController extends Controller
 
     public function root()
     {
+        $sections = Section::with('discounts')->get();
+
         if (request()->user()->isAdmin()) {
             return redirect()->route('records.index');
         }
-        return view('wallets');
+        return view('wallets', compact('sections'));
     }
 
     /*Language Translation*/

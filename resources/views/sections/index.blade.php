@@ -23,28 +23,51 @@
                             <p class="card-text text-muted">{{ $section->description }}</p>
                         </div>
                         <div>
-                            <button id="addRow" class="btn btn-primary">Add New Section</button>
+                            <a href="{{ route('discounts.create', ['section_id' => $section->id]) }}" id="addRow"
+                                class="btn btn-primary">
+                                New Discount
+                            </a>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <div class="card col-xl-3 col-md-6 shadow-lg" style="min-width: 15rem;">
-                            <div class="card-body">
-                                <h4 class="card-title mb-2">Pizza Company</h4>
-                                <h6 class="card-subtitle font-14 text-success">70 points</h6>
+
+                    <div class="row m-3">
+                        @foreach ($section->discounts as $discount)
+                            <div class="col-xl-3 col-md-6 mb-4">
+                                <div class="card shadow-lg h-100">
+                                    <div class="card-body">
+                                        <div class="d-flex align-items-center mb-2">
+                                            <h4 class="card-title mb-0 me-3">{{ $discount->name }}</h4>
+                                            <span class="badge bg-warning fs-12 px-3 py-2">
+                                                @if ($discount->type == 'percent')
+                                                    {{ $discount->value }}% OFF
+                                                @elseif ($discount->type == 'fixed')
+                                                    {{ $discount->value }}$ OFF
+                                                @endif
+                                            </span>
+                                        </div>
+                                        <h6 class="card-subtitle font-14 text-success">{{ $discount->point_cost }} points
+                                        </h6>
+                                    </div>
+                                    <img class="img-fluid mx-auto object-fit-cover" src="{{ $discount->image_url }}"
+                                        alt="Card image cap">
+                                    <div class="card-body">
+                                        <p class="card-text">{{ $discount->description }}</p>
+                                    </div>
+                                    <div class="card-footer d-flex justify-content-end">
+                                        <a href="{{ route('discounts.edit', $discount) }}"
+                                            class="btn btn-primary me-2">Edit <i
+                                                class="ri-edit-line align-middle ms-1 lh-1"></i></a>
+                                        <form action="{{ route('discounts.destroy', $discount->id) }}" method="POST"
+                                            onsubmit="return confirm('Are you sure you want to delete this discount?');">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger">Delete <i
+                                                    class="ri-delete-bin-line align-middle ms-1 lh-1"></i></button>
+                                        </form>
+                                    </div>
+                                </div>
                             </div>
-                            <img class="img-fluid mx-auto" src="{{ URL::asset('build/images/pizza.jpg') }}" width="100"
-                                alt="Card image cap">
-                            <div class="card-body">
-                                <p class="card-text">The Pizza Company is superior in all aspects – taste, store design and
-                                    ambience, comfort, home delivery area coverage, variety of pizza crusts, sauces.</p>
-                            </div>
-                            <div class="card-footer d-flex justify-content-end">
-                                <a href="#" class="btn btn-primary me-2">Edit <i
-                                        class="ri-edit-line align-middle ms-1 lh-1"></i></a>
-                                <button class="btn btn-danger">Delete <i
-                                        class="ri-delete-bin-line align-middle ms-1 lh-1"></i></button>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

@@ -10,4 +10,9 @@ class Section extends Model
     use HasFactory;
 
     protected $fillable = ['name', 'description'];
+
+    public function discounts()
+    {
+        return $this->hasMany(Discount::class);
+    }
 }
