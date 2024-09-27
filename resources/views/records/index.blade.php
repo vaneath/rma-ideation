@@ -11,7 +11,7 @@
         <div class="col-lg-12">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="card-title mb-0">Modal Data Datatables</h5>
+                    <h5 class="card-title mb-0">Customer Survey Records</h5>
                 </div>
                 <div class="card-body">
                     <table id="model-datatables" class="table table-bordered nowrap table-striped align-middle"

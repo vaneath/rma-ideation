@@ -11,12 +11,14 @@
     <div id="scrollbar">
         <div class="container-fluid">
             <ul class="navbar-nav mt-5" id="navbar-nav">
-                <li class="nav-item">
-                    <a href="/wallets" class="nav-link">
-                        <i class="ri-dashboard-2-line"></i>
-                        <span>Wallets</span>
-                    </a>
-                </li>
+                <?php if (\Illuminate\Support\Facades\Blade::check('user')): ?>
+                    <li class="nav-item">
+                        <a href="/wallets" class="nav-link">
+                            <i class="ri-dashboard-2-line"></i>
+                            <span>Wallets</span>
+                        </a>
+                    </li>
+                <?php endif; ?>
 
                 <?php if (\Illuminate\Support\Facades\Blade::check('admin')): ?>
                     <li class="nav-item">
