@@ -78,9 +78,9 @@ class HomeController extends Controller
         }
 
         // Check if there are no more null columns and add 30 points if true
-        if (!$user->hasNullSpecificColumns() && !$user->points_awarded) {
+        if (!$user->hasNullSpecificColumns() && !$user->point_awarded) {
             $user->increment('points', 30);
-            $user->points_awarded = true;
+            $user->point_awarded = true;
             $user->save();
         }
 

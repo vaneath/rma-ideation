@@ -30,14 +30,14 @@
                         <!-- Navigation between steps -->
                         <div class="step-arrow-nav mb-4">
                             <ul class="nav nav-pills custom-nav nav-justified" role="tablist">
-                                <li class="nav-item" role="presentation">
+                                <li class="nav-item d-flex align-items-center justify-content-center" role="presentation">
                                     <button class="nav-link active" id="personal-info-tab" data-bs-toggle="pill"
                                         data-bs-target="#personal-info" type="button" role="tab"
                                         aria-controls="personal-info" aria-selected="true">
                                         Personal Information
                                     </button>
                                 </li>
-                                <li class="nav-item" role="presentation">
+                                <li class="nav-item d-flex align-items-center justify-content-center" role="presentation">
                                     <button class="nav-link disabled" id="car-info-tab" data-bs-toggle="pill"
                                         data-bs-target="#car-info" type="button" role="tab" aria-controls="car-info"
                                         aria-selected="false">
@@ -53,59 +53,6 @@
                             <div class="tab-pane fade show active" id="personal-info" role="tabpanel"
                                 aria-labelledby="personal-info-tab">
                                 <div class="row">
-                                    {{-- <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="gender-input" class="form-label">Gender <span
-                                                    class="text-danger">*</span></label>
-                                            <select class="form-control @error('gender') is-invalid @enderror"
-                                                id="gender-input" name="gender" required>
-                                                <option value="male" {{ old('gender') == 'male' ? 'selected' : '' }}>Male
-                                                </option>
-                                                <option value="female" {{ old('gender') == 'female' ? 'selected' : '' }}>
-                                                    Female</option>
-                                                <option value="other" {{ old('gender') == 'other' ? 'selected' : '' }}>
-                                                    Other</option>
-                                            </select>
-                                            @error('gender')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div><!-- end col -->
-
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="age-input" class="form-label">Age <span
-                                                    class="text-danger">*</span></label>
-                                            <input type="number" min="16" max="100"
-                                                class="form-control @error('age') is-invalid @enderror" id="age-input"
-                                                name="age" value="{{ old('age') }}"
-                                                placeholder="Enter your age (16-100)" required />
-                                            @error('age')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div><!-- end col -->
-
-                                    <div class="col-md-6">
-                                        <div class="mb-3">
-                                            <label for="phone-input" class="form-label">Phone Number <span
-                                                    class="text-danger">*</span></label>
-                                            <input type="tel"
-                                                class="form-control @error('phone_number') is-invalid @enderror"
-                                                id="phone-input" name="phone_number" value="{{ old('phone_number') }}"
-                                                placeholder="092 888 777" required>
-                                            @error('phone_number')
-                                                <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $message }}</strong>
-                                                </span>
-                                            @enderror
-                                        </div>
-                                    </div><!-- end col --> --}}
-
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="job-title-input" class="form-label">Job Title <span
