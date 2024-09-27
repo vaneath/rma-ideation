@@ -13,7 +13,7 @@
             <ul class="navbar-nav mt-5" id="navbar-nav">
                 <?php if (\Illuminate\Support\Facades\Blade::check('user')): ?>
                     <li class="nav-item">
-                        <a href="/wallets" class="nav-link">
+                        <a href="/" class="nav-link">
                             <i class="ri-dashboard-2-line"></i>
                             <span>Wallets</span>
                         </a>

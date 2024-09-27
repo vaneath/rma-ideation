@@ -161,7 +161,11 @@
                                                     style="width:100%">
                                                     <thead>
                                                         <tr>
-                                                            <th class="text-center align-middle">Job Title</th>
+                                                            <th class="text-center align-middle">No.</th>
+                                                            <th class="text-center align-middle">District</th>
+                                                            <th class="text-center align-middle">Driving Purpose</th>
+                                                            <th class="text-center align-middle">Driving Frequency</th>
+                                                            <th class="text-center align-middle">Favorite Car Feature</th>
                                                             <th class="text-center align-middle">Car Fuel</th>
                                                             <th class="text-center align-middle">Car Type</th>
                                                             <th class="text-center align-middle">Car Make</th>
@@ -175,7 +179,11 @@
                                                     <tbody>
                                                         @foreach (Auth::user()->records as $records)
                                                             <tr>
-                                                                <td>{{ $records->job_title }}</td>
+                                                                <td>{{ $records->id }}</td>
+                                                                <td>{{ $records->district }}</td>
+                                                                <td>{{ $records->driving_purpose }}</td>
+                                                                <td>{{ $records->driving_frequency }}</td>
+                                                                <td>{{ $records->favorite_car_feature }}</td>
                                                                 <td>{{ $records->car_fuel }}</td>
                                                                 <td>{{ $records->car_type }}</td>
                                                                 <td>{{ $records->car_make }}</td>
