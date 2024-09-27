@@ -55,19 +55,158 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="mb-3">
-                                            <label for="job-title-input" class="form-label">Job Title <span
+                                            <label for="district-input" class="form-label">District <span
                                                     class="text-danger">*</span></label>
-                                            <input type="text"
-                                                class="form-control @error('job_title') is-invalid @enderror"
-                                                id="job-title-input" name="job_title" value="{{ old('job_title') }}"
-                                                placeholder="Enter your job title" required>
-                                            @error('job_title')
+                                            <select class="form-control @error('district') is-invalid @enderror"
+                                                id="district-input" name="district" required>
+                                                <option value="Daun Penh"
+                                                    {{ old('district') == 'Daun Penh' ? 'selected' : '' }}>Daun Penh
+                                                </option>
+                                                <option value="Chamkar Mon"
+                                                    {{ old('district') == 'Chamkar Mon' ? 'selected' : '' }}>Chamkar Mon
+                                                </option>
+                                                <option value="Tuol Kork"
+                                                    {{ old('district') == 'Tuol Kork' ? 'selected' : '' }}>Tuol Kork
+                                                </option>
+                                                <option value="Prampi Makara"
+                                                    {{ old('district') == 'Prampi Makara' ? 'selected' : '' }}>Prampi Makara
+                                                </option>
+                                                <option value="Dangkao"
+                                                    {{ old('district') == 'Dangkao' ? 'selected' : '' }}>Dangkao</option>
+                                                <option value="Mean Chey"
+                                                    {{ old('district') == 'Mean Chey' ? 'selected' : '' }}>Mean Chey
+                                                </option>
+                                                <option value="Russey Keo"
+                                                    {{ old('district') == 'Russey Keo' ? 'selected' : '' }}>Russey Keo
+                                                </option>
+                                                <option value="Sen Sok"
+                                                    {{ old('district') == 'Sen Sok' ? 'selected' : '' }}>Sen Sok</option>
+                                                <option value="Pur Senchey"
+                                                    {{ old('district') == 'Pur Senchey' ? 'selected' : '' }}>Pur Senchey
+                                                </option>
+                                                <option value="Chbar Ampov"
+                                                    {{ old('district') == 'Chbar Ampov' ? 'selected' : '' }}>Chbar Ampov
+                                                </option>
+                                                <option value="Boeng Keng Kang"
+                                                    {{ old('district') == 'Boeng Keng Kang' ? 'selected' : '' }}>Boeng Keng
+                                                    Kang</option>
+                                                <option value="Chroy Changvar"
+                                                    {{ old('district') == 'Chroy Changvar' ? 'selected' : '' }}>Chroy
+                                                    Changvar</option>
+                                            </select>
+                                            @error('district')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                         </div>
                                     </div><!-- end col -->
+
+                                    <!-- Driving Purpose -->
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="driving-purpose-input" class="form-label">Driving Purpose <span
+                                                    class="text-danger">*</span></label>
+                                            <select class="form-control @error('driving_purpose') is-invalid @enderror"
+                                                id="driving-purpose-input" name="driving_purpose" required>
+                                                <option value="Work/School"
+                                                    {{ old('driving_purpose') == 'Work/School' ? 'selected' : '' }}>
+                                                    Work/School</option>
+                                                <option value="Travel"
+                                                    {{ old('driving_purpose') == 'Travel' ? 'selected' : '' }}>Travel
+                                                </option>
+                                                <option value="Vacation"
+                                                    {{ old('driving_purpose') == 'Vacation' ? 'selected' : '' }}>Vacation
+                                                </option>
+                                                <option value="Shopping"
+                                                    {{ old('driving_purpose') == 'Shopping' ? 'selected' : '' }}>Shopping
+                                                </option>
+                                                <option value="Family Trip"
+                                                    {{ old('driving_purpose') == 'Family Trip' ? 'selected' : '' }}>Family
+                                                    Trip</option>
+                                                <option value="Pick Up"
+                                                    {{ old('driving_purpose') == 'Pick Up' ? 'selected' : '' }}>Pick Up
+                                                </option>
+                                                <option value="Delivery"
+                                                    {{ old('driving_purpose') == 'Delivery' ? 'selected' : '' }}>Delivery
+                                                </option>
+                                                <option value="Other"
+                                                    {{ old('driving_purpose') == 'Other' ? 'selected' : '' }}>Other
+                                                </option>
+                                            </select>
+                                            @error('driving_purpose')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div> <!-- end col -->
+
+                                    <!-- Driving Frequency -->
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="driving-frequency-input" class="form-label">Driving Frequency <span
+                                                    class="text-danger">*</span></label>
+                                            <select class="form-control @error('driving_frequency') is-invalid @enderror"
+                                                id="driving-frequency-input" name="driving_frequency" required>
+                                                <option value="Daily"
+                                                    {{ old('driving_frequency') == 'Daily' ? 'selected' : '' }}>Daily
+                                                </option>
+                                                <option value="Once in a week"
+                                                    {{ old('driving_frequency') == 'Once in a week' ? 'selected' : '' }}>
+                                                    Once in a week</option>
+                                                <option value="Several times a week"
+                                                    {{ old('driving_frequency') == 'Several times a week' ? 'selected' : '' }}>
+                                                    Several times a week</option>
+                                                <option value="A few times per month"
+                                                    {{ old('driving_frequency') == 'A few times per month' ? 'selected' : '' }}>
+                                                    A few times per month</option>
+                                                <option value="Rarely"
+                                                    {{ old('driving_frequency') == 'Rarely' ? 'selected' : '' }}>Rarely
+                                                </option>
+                                            </select>
+                                            @error('driving_frequency')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div> <!-- end col -->
+
+                                    <!-- Favorite Car Feature -->
+                                    <div class="row mb-3">
+                                        <div class="col-md-6">
+                                            <label for="favorite-car-feature-input" class="form-label">Favorite Car
+                                                Feature <span class="text-danger">*</span></label>
+                                            <select
+                                                class="form-control @error('favorite_car_feature') is-invalid @enderror"
+                                                id="favorite-car-feature-input" name="favorite_car_feature" required>
+                                                <option value="Color"
+                                                    {{ old('favorite_car_feature') == 'Color' ? 'selected' : '' }}>Color
+                                                </option>
+                                                <option value="Speed"
+                                                    {{ old('favorite_car_feature') == 'Speed' ? 'selected' : '' }}>Speed
+                                                </option>
+                                                <option value="Fuel Efficiency"
+                                                    {{ old('favorite_car_feature') == 'Fuel Efficiency' ? 'selected' : '' }}>
+                                                    Fuel Efficiency</option>
+                                                <option value="Comfort"
+                                                    {{ old('favorite_car_feature') == 'Comfort' ? 'selected' : '' }}>
+                                                    Comfort</option>
+                                                <option value="Safety"
+                                                    {{ old('favorite_car_feature') == 'Safety' ? 'selected' : '' }}>Safety
+                                                </option>
+                                                <option value="Technology"
+                                                    {{ old('favorite_car_feature') == 'Technology' ? 'selected' : '' }}>
+                                                    Technology</option>
+                                            </select>
+                                            @error('favorite_car_feature')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                        </div>
+                                    </div> <!-- end col -->
                                 </div><!-- end row -->
 
                                 <div class="d-flex align-items-start gap-3 mt-4">
@@ -91,11 +230,13 @@
                                                 id="car-fuel-input" name="car_fuel" required>
                                                 <option value="Gasoline"
                                                     {{ old('car_fuel') == 'Gasoline' ? 'selected' : '' }}>Gasoline</option>
-                                                <option value="Diesel" {{ old('car_fuel') == 'Diesel' ? 'selected' : '' }}>
+                                                <option value="Diesel"
+                                                    {{ old('car_fuel') == 'Diesel' ? 'selected' : '' }}>
                                                     Diesel</option>
                                                 <option value="Electric"
                                                     {{ old('car_fuel') == 'Electric' ? 'selected' : '' }}>Electric</option>
-                                                <option value="Hybrid" {{ old('car_fuel') == 'Hybrid' ? 'selected' : '' }}>
+                                                <option value="Hybrid"
+                                                    {{ old('car_fuel') == 'Hybrid' ? 'selected' : '' }}>
                                                     Hybrid</option>
                                             </select>
                                             @error('car_fuel')

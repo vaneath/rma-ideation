@@ -19,7 +19,10 @@
                         <thead>
                             <tr>
                                 <th class="text-center align-middle">No.</th>
-                                <th class="text-center align-middle">Job Title</th>
+                                <th class="text-center align-middle">District</th>
+                                <th class="text-center align-middle">Driving Purpose</th>
+                                <th class="text-center align-middle">Driving Frequency</th>
+                                <th class="text-center align-middle">Favorite Car Feature</th>
                                 <th class="text-center align-middle">Car Fuel</th>
                                 <th class="text-center align-middle">Car Type</th>
                                 <th class="text-center align-middle">Car Make</th>
@@ -34,8 +37,11 @@
                         <tbody>
                             @foreach ($records as $record)
                                 <tr class="text-center">
-                                    <td>{{ $record->job_title }}</td>
-                                    <td>{{ $record->job_title }}</td>
+                                    <td>{{ $record->id }}</td>
+                                    <td>{{ $record->district }}</td>
+                                    <td>{{ $record->driving_purpose }}</td>
+                                    <td>{{ $record->driving_frequency }}</td>
+                                    <td>{{ $record->favorite_car_feature }}</td>
                                     <td>{{ $record->car_fuel }}</td>
                                     <td>{{ $record->car_type }}</td>
                                     <td>{{ $record->car_make }}</td>
