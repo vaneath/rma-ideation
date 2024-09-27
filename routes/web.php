@@ -29,6 +29,7 @@ Route::middleware(['admin'])->group(function () {
 
 //Record Routes
 Route::resource('records', RecordController::class)->except(['index']);
+Route::put('/records/{id}/update-status', [RecordController::class, 'updateStatus'])->name('records.updateStatus');
 
 //Update User Details
 Route::put('/update-profile', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('updateProfile');

@@ -11,10 +11,8 @@
     <div id="scrollbar">
         <div class="container-fluid">
             <ul class="navbar-nav mt-5" id="navbar-nav">
-                
-
                 <li class="nav-item">
-                    <a href="wallets" class="nav-link">
+                    <a href="/wallets" class="nav-link">
                         <i class="ri-dashboard-2-line"></i>
                         <span>Wallets</span>
                     </a>
@@ -22,14 +20,14 @@
 
                 <?php if (\Illuminate\Support\Facades\Blade::check('admin')): ?>
                     <li class="nav-item">
-                        <a href="records" class="nav-link">
+                        <a href="/records" class="nav-link">
                             <i class="ri-money-dollar-circle-line"></i>
                             <span>Customer Records</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="sections" class="nav-link">
+                        <a href="/sections" class="nav-link">
                             <i class="ri-apps-2-line"></i>
                             <span>Sections</span>
                         </a>

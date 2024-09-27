@@ -14,7 +14,15 @@ class RecordController extends Controller
 
     public function index()
     {
-        return view('records.index');
+
+        return view('records.index', [
+            'records' => Record::all()
+        ]);
+    }
+
+    public function show(Record $record)
+    {
+        return view('records.show', compact('record'));
     }
 
     public function create()
@@ -44,5 +52,23 @@ class RecordController extends Controller
             // Log the error or handle it accordingly
             return redirect()->back()->withErrors(['error' => $e->getMessage()]);
         }
+    }
+
+    public function updateStatus(Request $request, $id)
+    {
+        $record = Record::findOrFail($id);
+        $user = $request->user();
+
+        if ($request->input('action') == 'approve') {
+            $record->review_status = 'approved';
+            $user->points += $request->input('score');
+            $user->save();
+        } else {
+            $record->review_status = 'rejected';
+        }
+
+        $record->save();
+
+        return redirect()->back()->with('success', 'Record status updated successfully.');
     }
 }

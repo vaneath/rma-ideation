@@ -18,6 +18,7 @@ class Record extends Model
         'car_model',
         'car_year',
         'car_color',
+        'review_status',
         'user_id',
     ];
 
