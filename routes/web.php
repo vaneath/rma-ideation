@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\RecordController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,8 +22,10 @@ Route::get('index/{locale}', [App\Http\Controllers\HomeController::class, 'lang'
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'root'])->name('root');
 
-Route::get('admin', [App\Http\Controllers\AdminController::class, 'index'])->name('admin.index')->middleware(middleware: ['auth','admin']);
-Route::resource('records', App\Http\Controllers\RecordController::class)->middleware(middleware: ['auth','admin']);
+Route::middleware(['auth', 'admin'])->group(function () {
+    Route::get('admin', [AdminController::class, 'index'])->name('admin.index');
+    Route::resource('records', RecordController::class);
+});
 
 //Update User Details
 Route::post('/update-profile/{id}', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('updateProfile');

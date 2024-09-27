@@ -50,4 +50,8 @@ class User extends Authenticatable
         return $this->role === 'admin';  // Assuming you have a 'role' field
     }
 
+    public function records()
+    {
+        return $this->hasMany(Record::class);
+    }
 }
