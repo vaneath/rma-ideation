@@ -18,8 +18,13 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
-        'name',
+        'first_name',
+        'last_name',
+        'gender',
+        'age',
+        'phone_number',
         'email',
+        'point',
         'password',
         'role',
         'avatar',
@@ -53,5 +58,10 @@ class User extends Authenticatable
     public function records()
     {
         return $this->hasMany(Record::class);
+    }
+
+    public function getFullNameAttribute()
+    {
+        return "{$this->first_name} {$this->last_name}";
     }
 }

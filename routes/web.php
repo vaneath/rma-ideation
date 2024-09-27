@@ -22,10 +22,13 @@ Route::get('index/{locale}', [App\Http\Controllers\HomeController::class, 'lang'
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'root'])->name('root');
 
-Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['admin'])->group(function () {
     Route::get('admin', [AdminController::class, 'index'])->name('admin.index');
-    Route::resource('records', RecordController::class);
+    Route::get('records', [RecordController::class, 'index'])->name('records.index');
 });
+
+//Record Routes
+Route::resource('records', RecordController::class)->except(['index']);
 
 //Update User Details
 Route::post('/update-profile/{id}', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('updateProfile');

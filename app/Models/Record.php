@@ -10,24 +10,18 @@ class Record extends Model
     use HasFactory;
 
     protected $fillable = [
-        'first_name',
-        'last_name',
-        'age',
-        'phone',
+        'job_title',
+        'car_fuel',
         'car_type',
         'car_make',
         'car_model',
         'car_year',
+        'car_color',
         'user_id',
     ];
 
     public function user()
     {
         return $this->belongsTo(User::class);
-    }
-
-    public function getFullNameAttribute()
-    {
-        return "{$this->first_name} {$this->last_name}";
     }
 }
