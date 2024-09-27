@@ -20,7 +20,7 @@
                     <div class="d-flex align-items-end justify-content-between mt-4">
                         <div>
                             <h4 class="fs-22 fw-semibold ff-secondary mb-4">
-                                <span class="counter-value" data-target="165">0</span> points
+                                <span class="counter-value" data-target="165">{{ auth()->user()->point }}</span> points
                             </h4>
                             <a href="" class="text-decoration-underline">Get more points</a>
                         </div>
@@ -33,6 +33,33 @@
                 </div><!-- end card body -->
             </div><!-- end card -->
         </div><!-- end col -->
+
+        @if (auth()->user()->records->isEmpty())
+            <div class="col-xl-3 col-md-6">
+                <div class="card bg-primary">
+                    <div class="card-body p-0">
+                        <div class="alert alert-success rounded-top alert-solid alert-label-icon border-0 rounded-0 m-0 d-flex align-items-center"
+                            role="alert">
+                            <i class="ri-error-warning-line label-icon"></i>
+                            <div class="flex-grow-1 text-truncate">
+                                Earn you up to 100 points
+                            </div>
+                        </div>
+
+                        <div class="row align-items-end p-3">
+                            <p class="fs-16 text-white mr-3">
+                                Doing this quick survey will earn you up to
+                                <b>100points</b>
+                                <i class="mdi mdi-arrow-right"></i>
+                            </p>
+                            <div class="mt-3 d-flex justify-content-end">
+                                <a href="{{ route('records.create') }}" class="btn btn-info">Start Survey</a>
+                            </div>
+                        </div>
+                    </div> <!-- end card-body-->
+                </div>
+            </div> <!-- end col-->
+        @endif
 
         {{-- Foods and Beverages --}}
         <div class="mt-3">
@@ -110,7 +137,8 @@
                             <h4 class="card-title mb-2">Dairy Queen</h4>
                             <h6 class="card-subtitle font-14 text-success">50 points</h6>
                         </div>
-                        <img class="img-fluid" src="{{ URL::asset('build/images/small/img-4.jpg') }}" alt="Card image cap">
+                        <img class="img-fluid" src="{{ URL::asset('build/images/small/img-4.jpg') }}"
+                            alt="Card image cap">
                         <div class="card-body">
                             <p class="card-text">Objectively pursue diverse catalysts for change for interoperable
                                 meta-services. Distinctively re-engineer revolutionary meta-services.</p>

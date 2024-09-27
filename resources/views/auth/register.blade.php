@@ -3,7 +3,6 @@
     @lang('translation.signup')
 @endsection
 @section('content')
-
     <div class="auth-page-wrapper pt-5">
         <!-- auth page bg -->
         <div class="auth-one-bg-position auth-one-bg" id="auth-particles">
@@ -25,7 +24,8 @@
                         <div class="text-center mt-sm-5 mb-4 text-white-50">
                             <div>
                                 <a href="index" class="d-inline-block auth-logo">
-                                    <img src="{{ URL::asset('build/images/logo-light.png') }}" alt="" height="20">
+                                    <img src="{{ URL::asset('build/images/logo-light.png') }}" alt=""
+                                        height="20">
                                 </a>
                             </div>
                             <p class="mt-3 fs-15 fw-medium">Premium Admin & Dashboard Template</p>
@@ -63,18 +63,36 @@
                                             </div>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="username" class="form-label">Username <span
+                                            <label for="first_name" class="form-label">First Name <span
                                                     class="text-danger">*</span></label>
-                                            <input type="text" class="form-control @error('name') is-invalid @enderror"
-                                                name="name" value="{{ old('name') }}" id="username"
-                                                placeholder="Enter username" required>
-                                            @error('name')
+                                            <input type="text"
+                                                class="form-control @error('first_name') is-invalid @enderror"
+                                                name="first_name" value="{{ old('first_name') }}" id="first_name"
+                                                placeholder="Enter first name" required>
+                                            @error('first_name')
                                                 <span class="invalid-feedback" role="alert">
                                                     <strong>{{ $message }}</strong>
                                                 </span>
                                             @enderror
                                             <div class="invalid-feedback">
-                                                Please enter username
+                                                Please enter first name
+                                            </div>
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="last_name" class="form-label">Last Name <span
+                                                    class="text-danger">*</span></label>
+                                            <input type="text"
+                                                class="form-control @error('last_name') is-invalid @enderror"
+                                                name="last_name" value="{{ old('last_name') }}" id="last_name"
+                                                placeholder="Enter last name" required>
+                                            @error('last_name')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                            @enderror
+                                            <div class="invalid-feedback">
+                                                Please enter last name
                                             </div>
                                         </div>
 
@@ -94,7 +112,8 @@
                                             </div>
                                         </div>
                                         <div class="mb-3">
-                                            <label for="input-password">Confirm Password <span class="text-danger">*</span></label>
+                                            <label for="input-password">Confirm Password <span
+                                                    class="text-danger">*</span></label>
                                             <input type="password"
                                                 class="form-control @error('password_confirmation') is-invalid @enderror"
                                                 name="password_confirmation" id="input-password"
@@ -178,8 +197,8 @@
                         <div class="text-center">
                             <script>
                                 document.write(new Date().getFullYear())
-                            </script> Velzon. Crafted with <i
-                                    class="mdi mdi-heart text-danger"></i> by Themesbrand</p>
+                            </script> Velzon. Crafted with <i class="mdi mdi-heart text-danger"></i> by
+                            Themesbrand</p>
                         </div>
                     </div>
                 </div>

@@ -13,14 +13,14 @@ return new class extends Migration
     {
         Schema::create('records', function (Blueprint $table) {
             $table->id();
-            $table->string('first_name');
-            $table->string('last_name');
-            $table->integer('age');
-            $table->string('phone');
-            $table->enum('car_type', ['Sedan', 'SUV', 'Truck', 'Van', 'Electric', 'Hybrid', 'Sports']);
+            $table->string('job_title');
+            $table->enum('car_fuel', ['Gasoline', 'Diesel', 'Electric', 'Hybrid']);
+            $table->enum('car_type', ['Sedan', 'SUV', 'Truck', 'Van', 'Sports']);
             $table->string('car_make');
             $table->string('car_model');
             $table->string('car_year');
+            $table->enum('car_color', ['Black', 'White', 'Silver', 'Red', 'Blue', 'Green', 'Yellow', 'Orange', 'Purple', 'Brown', 'Gray', 'Pink']);
+            $table->enum('review_status', ['Pending', 'Approved', 'Rejected'])->default('Pending');
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

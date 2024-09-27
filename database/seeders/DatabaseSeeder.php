@@ -16,7 +16,8 @@ class DatabaseSeeder extends Seeder
     {
         User::factory(1)->create(
             [
-                'name' => 'vaneath',
+                'first_name' => 'V',
+                'last_name' => 'A',
                 'email' => 'vaneath@gmail.com',
                 'role' => 'admin',
             ]
@@ -24,7 +25,8 @@ class DatabaseSeeder extends Seeder
 
         User::factory(1)->create(
             [
-                'name' => 'pich',
+                'first_name' => 'pich',
+                'last_name' => 'pich',
                 'email' => 'pich@gmail.com',
                 'role' => 'user',
             ]
