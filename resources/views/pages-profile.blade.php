@@ -1,4 +1,4 @@
-@extends('layouts.master')
+@extends('layouts.rma')
 @section('title')
     @lang('translation.profile')
 @endsection
@@ -15,7 +15,8 @@
         <div class="row g-4">
             <div class="col-auto">
                 <div class="avatar-lg">
-                    <img src="{{ URL::asset('build/images/users/avatar-1.jpg') }}" alt="user-img" class="img-thumbnail rounded-circle" />
+                    <img src="{{ URL::asset('build/images/users/avatar-1.jpg') }}" alt="user-img"
+                        class="img-thumbnail rounded-circle" />
                 </div>
             </div>
             <!--end col-->
@@ -229,8 +230,8 @@
                                         <div>
                                             <div class="d-flex align-items-center py-3">
                                                 <div class="avatar-xs flex-shrink-0 me-3">
-                                                    <img src="{{ URL::asset('build/images/users/avatar-3.jpg') }}" alt=""
-                                                        class="img-fluid rounded-circle material-shadow" />
+                                                    <img src="{{ URL::asset('build/images/users/avatar-3.jpg') }}"
+                                                        alt="" class="img-fluid rounded-circle material-shadow" />
                                                 </div>
                                                 <div class="flex-grow-1">
                                                     <div>
@@ -246,8 +247,8 @@
                                             </div>
                                             <div class="d-flex align-items-center py-3">
                                                 <div class="avatar-xs flex-shrink-0 me-3">
-                                                    <img src="{{ URL::asset('build/images/users/avatar-4.jpg') }}" alt=""
-                                                        class="img-fluid rounded-circle material-shadow" />
+                                                    <img src="{{ URL::asset('build/images/users/avatar-4.jpg') }}"
+                                                        alt="" class="img-fluid rounded-circle material-shadow" />
                                                 </div>
                                                 <div class="flex-grow-1">
                                                     <div>
@@ -263,8 +264,8 @@
                                             </div>
                                             <div class="d-flex align-items-center py-3">
                                                 <div class="avatar-xs flex-shrink-0 me-3">
-                                                    <img src="{{ URL::asset('build/images/users/avatar-5.jpg') }}" alt=""
-                                                        class="img-fluid rounded-circle material-shadow" />
+                                                    <img src="{{ URL::asset('build/images/users/avatar-5.jpg') }}"
+                                                        alt="" class="img-fluid rounded-circle material-shadow" />
                                                 </div>
                                                 <div class="flex-grow-1">
                                                     <div>
@@ -307,8 +308,8 @@
                                         </div>
                                         <div class="d-flex mb-4">
                                             <div class="flex-shrink-0">
-                                                <img src="{{ URL::asset('build/images/small/img-4.jpg') }}" alt="" height="50"
-                                                    class="rounded material-shadow" />
+                                                <img src="{{ URL::asset('build/images/small/img-4.jpg') }}" alt=""
+                                                    height="50" class="rounded material-shadow" />
                                             </div>
                                             <div class="flex-grow-1 ms-3 overflow-hidden">
                                                 <a href="javascript:void(0);">
@@ -319,8 +320,8 @@
                                         </div>
                                         <div class="d-flex mb-4">
                                             <div class="flex-shrink-0">
-                                                <img src="{{ URL::asset('build/images/small/img-5.jpg') }}" alt="" height="50"
-                                                    class="rounded material-shadow" />
+                                                <img src="{{ URL::asset('build/images/small/img-5.jpg') }}" alt=""
+                                                    height="50" class="rounded material-shadow" />
                                             </div>
                                             <div class="flex-grow-1 ms-3 overflow-hidden">
                                                 <a href="javascript:void(0);">
@@ -331,8 +332,8 @@
                                         </div>
                                         <div class="d-flex">
                                             <div class="flex-shrink-0">
-                                                <img src="{{ URL::asset('build/images/small/img-6.jpg') }}" alt="" height="50"
-                                                    class="rounded material-shadow" />
+                                                <img src="{{ URL::asset('build/images/small/img-6.jpg') }}" alt=""
+                                                    height="50" class="rounded material-shadow" />
                                             </div>
                                             <div class="flex-grow-1 ms-3 overflow-hidden">
                                                 <a href="javascript:void(0);">
@@ -1538,14 +1539,14 @@
                                                 <a href="javascript: void(0);" class="avatar-group-item material-shadow"
                                                     data-bs-toggle="tooltip" data-bs-placement="top" title=""
                                                     data-bs-original-title="Christi">
-                                                    <img src="{{ URL::asset('build/images/users/avatar-4.jpg') }}" alt=""
-                                                        class="rounded-circle avatar-xs" />
+                                                    <img src="{{ URL::asset('build/images/users/avatar-4.jpg') }}"
+                                                        alt="" class="rounded-circle avatar-xs" />
                                                 </a>
                                                 <a href="javascript: void(0);" class="avatar-group-item material-shadow"
                                                     data-bs-toggle="tooltip" data-bs-placement="top" title=""
                                                     data-bs-original-title="Frank Hook">
-                                                    <img src="{{ URL::asset('build/images/users/avatar-3.jpg') }}" alt=""
-                                                        class="rounded-circle avatar-xs" />
+                                                    <img src="{{ URL::asset('build/images/users/avatar-3.jpg') }}"
+                                                        alt="" class="rounded-circle avatar-xs" />
                                                 </a>
                                                 <a href="javascript: void(0);" class="avatar-group-item material-shadow"
                                                     data-bs-toggle="tooltip" data-bs-placement="top" title=""
@@ -1584,17 +1585,20 @@
                                                 <div class="col-xxl-4">
                                                     <div class="row border border-dashed gx-2 p-2 mb-2">
                                                         <div class="col-4">
-                                                            <img src="{{ URL::asset('build/images/small/img-2.jpg') }}" alt=""
+                                                            <img src="{{ URL::asset('build/images/small/img-2.jpg') }}"
+                                                                alt=""
                                                                 class="img-fluid rounded material-shadow" />
                                                         </div>
                                                         <!--end col-->
                                                         <div class="col-4">
-                                                            <img src="{{ URL::asset('build/images/small/img-3.jpg') }}" alt=""
+                                                            <img src="{{ URL::asset('build/images/small/img-3.jpg') }}"
+                                                                alt=""
                                                                 class="img-fluid rounded material-shadow" />
                                                         </div>
                                                         <!--end col-->
                                                         <div class="col-4">
-                                                            <img src="{{ URL::asset('build/images/small/img-4.jpg') }}" alt=""
+                                                            <img src="{{ URL::asset('build/images/small/img-4.jpg') }}"
+                                                                alt=""
                                                                 class="img-fluid rounded material-shadow" />
                                                         </div>
                                                         <!--end col-->
@@ -1668,7 +1672,8 @@
                                     </div>
                                     <div class="acitivity-item d-flex">
                                         <div class="flex-shrink-0">
-                                            <img src="{{ URL::asset('build/images/users/avatar-8.jpg') }}" alt=""
+                                            <img src="{{ URL::asset('build/images/users/avatar-8.jpg') }}"
+                                                alt=""
                                                 class="avatar-xs rounded-circle acitivity-avatar material-shadow" />
                                         </div>
                                         <div class="flex-grow-1 ms-3">

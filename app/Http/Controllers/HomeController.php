@@ -52,45 +52,40 @@ class HomeController extends Controller
         }
     }
 
-    public function updateProfile(Request $request, $id)
+    public function updateProfile(Request $request)
     {
+        // Validate the incoming request data
         $request->validate([
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email'],
-            'avatar' => ['nullable', 'image', 'mimes:jpg,jpeg,png', 'max:1024'],
+            'first_name' => ['nullable', 'string', 'max:255'],
+            'last_name' => ['nullable', 'string', 'max:255'],
+            'gender' => ['nullable', 'string', 'max:255'],
+            'age' => ['nullable', 'integer'],
+            'job_title' => ['nullable', 'string', 'max:255'],
+            'phone_number' => ['nullable', 'string', 'max:255'],
+            'email' => ['nullable', 'string', 'email', 'max:255'],
         ]);
 
-        $user = User::find($id);
-        $user->name = $request->get('name');
-        $user->email = $request->get('email');
+        // Get the authenticated user
+        $user = $request->user();
 
-        if ($request->file('avatar')) {
-            $avatar = $request->file('avatar');
-            $avatarName = time() . '.' . $avatar->getClientOriginalExtension();
-            $avatarPath = public_path('/images/');
-            $avatar->move($avatarPath, $avatarName);
-            $user->avatar =  $avatarName;
+        // Prepare the data for update, excluding null values
+        $data = $request->only(['first_name', 'last_name', 'gender', 'job_title', 'age', 'phone_number', 'email']);
+
+        // Update only if there are changes
+        $user->fill($data);
+        if ($user->isDirty()) {
+            $user->save();
         }
 
-        $user->update();
-        if ($user) {
-            Session::flash('message', 'User Details Updated successfully!');
-            Session::flash('alert-class', 'alert-success');
-            // return response()->json([
-            //     'isSuccess' => true,
-            //     'Message' => "User Details Updated successfully!"
-            // ], 200); // Status code here
-            return redirect()->back();
-        } else {
-            Session::flash('message', 'Something went wrong!');
-            Session::flash('alert-class', 'alert-danger');
-            // return response()->json([
-            //     'isSuccess' => true,
-            //     'Message' => "Something went wrong!"
-            // ], 200); // Status code here
-            return redirect()->back();
-
+        // Check if there are no more null columns and add 30 points if true
+        if (!$user->hasNullSpecificColumns() && !$user->points_awarded) {
+            $user->increment('points', 30);
+            $user->points_awarded = true;
+            $user->save();
         }
+
+
+        return redirect()->back()->with('message', 'User Details Updated successfully!');
     }
 
     public function updatePassword(Request $request, $id)
