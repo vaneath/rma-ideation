@@ -61,6 +61,21 @@
             </div> <!-- end col-->
         @endif
 
+        @if (auth()->user()->hasNullSpecificColumns())
+            <div class="card text-center p-3">
+                <div class="card-body">
+                    <img src="{{ URL::asset('build/images/giftbox.png') }}" alt="">
+                    <div class="mt-4">
+                        <h5>Profile Completion</h5>
+                        <p class="text-muted lh-base">Complete your profile to get 30 points.</p>
+                        <a href="/pages-profile-settings" class="bg-primary text-white px-3 py-2 rounded-pill">
+                            Complete Now
+                        </a>
+                    </div>
+                </div>
+            </div>
+        @endif
+
         {{-- Foods and Beverages --}}
         <div class="mt-3">
             <h5 class="mb-0 pb-1 mb-3 text-muted">Foods & Beverages</h5>

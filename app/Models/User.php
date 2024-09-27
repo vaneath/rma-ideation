@@ -22,6 +22,7 @@ class User extends Authenticatable
         'last_name',
         'gender',
         'age',
+        'job_title',
         'phone_number',
         'email',
         'point',
@@ -63,5 +64,16 @@ class User extends Authenticatable
     public function getFullNameAttribute()
     {
         return "{$this->first_name} {$this->last_name}";
+    }
+
+    public function hasNullSpecificColumns()
+    {
+        $columns = ['age', 'gender', 'phone_number', 'job_title'];
+        foreach ($columns as $column) {
+            if (is_null($this->$column)) {
+                return true;
+            }
+        }
+        return false;
     }
 }
