@@ -78,98 +78,46 @@
             </div>
         @endif
 
-        {{-- Foods and Beverages --}}
-        <div class="mt-3">
-            <h5 class="mb-0 pb-1 mb-3 text-muted">Foods & Beverages</h5>
-            <div class="overflow-auto">
-                <div class="d-flex gap-3">
-                    <!-- Card 1 -->
-                    <div class="card col-xl-3 col-md-6" style="min-width: 15rem;">
-                        <div class="card-body">
-                            <h4 class="card-title mb-2">Pizza Company</h4>
-                            <h6 class="card-subtitle font-14 text-success">70 points</h6>
-                        </div>
-                        <img class="img-fluid mx-auto" src="{{ URL::asset('build/images/pizza.jpg') }}" width="100"
-                            alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">The Pizza Company is superior in all aspects – taste, store design and
-                                ambience, comfort, home delivery area coverage, variety of pizza crusts, sauces.</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="javascript:void(0);" class="card-link link-success">Favorite <i
-                                    class="ri-bookmark-line align-middle ms-1 lh-1"></i></a>
-                            <a href="javascript:void(0);" class="card-link link-secondary">Read More <i
-                                    class="ri-arrow-right-s-line ms-1 align-middle lh-1"></i></a>
-                        </div>
-                    </div>
-                    <div class="card col-xl-3 col-md-6" style="min-width: 15rem;">
-                        <div class="card-body">
-                            <h4 class="card-title mb-2">Dairy Queen</h4>
-                            <h6 class="card-subtitle font-14 text-success">50 points</h6>
-                        </div>
-                        <img class="img-fluid d-block mx-auto" src="{{ URL::asset('build/images/small/img-4.jpg') }}"
-                            alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Objectively pursue diverse catalysts for change for interoperable
-                                meta-services. Distinctively re-engineer revolutionary meta-services.</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="javascript:void(0);" class="card-link link-success">Favorite <i
-                                    class="ri-bookmark-line align-middle ms-1 lh-1"></i></a>
-                            <a href="javascript:void(0);" class="card-link link-secondary">Read More <i
-                                    class="ri-arrow-right-s-line ms-1 align-middle lh-1"></i></a>
-                        </div>
-                    </div>
-                    <!-- Add more cards as needed -->
+        @foreach ($sections as $section)
+            <div class="mt-3">
+                <div class="mb-3">
+                    <h5 class="fs-16 mb-0 pb-1">{{ $section->name }}</h5>
+                    <p class="mb-0 pb-1 mb-3 text-muted">{{ $section->description }}</p>
                 </div>
-            </div>
-        </div>
-
-        {{-- Car Services --}}
-        <div class="mt-3">
-            <h5 class="mb-0 pb-1 mb-3 text-muted">Car Services</h5>
-            <div class="overflow-auto">
-                <div class="d-flex gap-3">
-                    <!-- Card 1 -->
-                    <div class="card col-xl-3 col-md-6" style="min-width: 15rem">
-                        <div class="card-body">
-                            <h4 class="card-title mb-2">Total Energies</h4>
-                            <h6 class="card-subtitle font-14 text-success">70 points</h6>
-                        </div>
-                        <img class="img-fluid d-block mx-auto" src="{{ URL::asset('build/images/total.png') }}"
-                            width="100" alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">TotalEnergies is a global integrated energy company that produces and
-                                markets energies: oil and biofuels, natural gas and green gas.</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="javascript:void(0);" class="card-link link-success">Favorite <i
-                                    class="ri-bookmark-line align-middle ms-1 lh-1"></i></a>
-                            <a href="javascript:void(0);" class="card-link link-secondary">Read More <i
-                                    class="ri-arrow-right-s-line ms-1 align-middle lh-1"></i></a>
-                        </div>
-                    </div>
-                    <div class="card col-xl-3 col-md-6" style="min-width: 15rem">
-                        <div class="card-body">
-                            <h4 class="card-title mb-2">Dairy Queen</h4>
-                            <h6 class="card-subtitle font-14 text-success">50 points</h6>
-                        </div>
-                        <img class="img-fluid" src="{{ URL::asset('build/images/small/img-4.jpg') }}"
-                            alt="Card image cap">
-                        <div class="card-body">
-                            <p class="card-text">Objectively pursue diverse catalysts for change for interoperable
-                                meta-services. Distinctively re-engineer revolutionary meta-services.</p>
-                        </div>
-                        <div class="card-footer">
-                            <a href="javascript:void(0);" class="card-link link-success">Favorite <i
-                                    class="ri-bookmark-line align-middle ms-1 lh-1"></i></a>
-                            <a href="javascript:void(0);" class="card-link link-secondary">Read More <i
-                                    class="ri-arrow-right-s-line ms-1 align-middle lh-1"></i></a>
-                        </div>
+                <div class="overflow-auto">
+                    <div class="d-flex gap-3">
+                        @foreach ($section->discounts as $discount)
+                            <div class="card col-xl-3 col-md-6" style="min-width: 15rem;">
+                                <div class="card-body">
+                                    <div class="d-flex align-items-center mb-2 gap-3">
+                                        <h4 class="card-title">{{ $discount->name }}</h4>
+                                        <span class="badge bg-warning fs-12 px-3 py-2">
+                                            @if ($discount->type == 'percent')
+                                                {{ $discount->value }}% OFF
+                                            @elseif ($discount->type == 'fixed')
+                                                {{ $discount->value }}$ OFF
+                                            @endif
+                                        </span>
+                                    </div>
+                                    <h6 class="card-subtitle font-14 text-success">{{ $discount->point_cost }} points</h6>
+                                </div>
+                                <img class="img-fluid mx-auto object-fit-cover" src="{{ $discount->image_url }}"
+                                    width="100" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">{{ $discount->description }}</p>
+                                </div>
+                                <div class="card-footer">
+                                    <a href="javascript:void(0);" class="card-link link-success">Favorite <i
+                                            class="ri-bookmark-line align-middle ms-1 lh-1"></i></a>
+                                    <a href="javascript:void(0);" class="card-link link-secondary">Read More <i
+                                            class="ri-arrow-right-s-line ms-1 align-middle lh-1"></i></a>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
-        </div>
+        @endforeach
     </div>
 @endsection
 @section('script')

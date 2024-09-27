@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RecordController;
 use App\Http\Controllers\SectionController;
+use App\Http\Controllers\DiscountController;
 
 /*
 |--------------------------------------------------------------------------
@@ -27,6 +28,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin', [AdminController::class, 'index'])->name('admin.index');
     Route::get('records', [RecordController::class, 'index'])->name('records.index');
     Route::resource('sections', SectionController::class);
+    Route::resource('discounts', DiscountController::class)->except(['index', 'show']);
 });
 
 //Record Routes
