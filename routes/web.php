@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\RecordController;
+use App\Http\Controllers\SectionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,9 +23,10 @@ Route::get('index/{locale}', [App\Http\Controllers\HomeController::class, 'lang'
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'root'])->name('root');
 
-Route::middleware(['admin'])->group(function () {
+Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin', [AdminController::class, 'index'])->name('admin.index');
     Route::get('records', [RecordController::class, 'index'])->name('records.index');
+    Route::resource('sections', SectionController::class);
 });
 
 //Record Routes
@@ -33,6 +35,5 @@ Route::put('/records/{id}/update-status', [RecordController::class, 'updateStatu
 
 //Update User Details
 Route::put('/update-profile', [App\Http\Controllers\HomeController::class, 'updateProfile'])->name('updateProfile');
-Route::post('/update-password/{id}', [App\Http\Controllers\HomeController::class, 'updatePassword'])->name('updatePassword');
 
 Route::get('/{any}', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
