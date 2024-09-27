@@ -2,12 +2,6 @@
 <div class="app-menu navbar-menu">
     <!-- LOGO -->
     <div class="navbar-brand-box">
-        <!-- Dark Logo-->
-        <a href="index" class="logo">
-            <span class="logo-lg">
-                <img src="<?php echo e(URL::asset('build/images/rma.png')); ?>" alt="" height="40">
-            </span>
-        </a>
         <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover"
             id="vertical-hover">
             <i class="ri-record-circle-line"></i>
@@ -16,7 +10,7 @@
 
     <div id="scrollbar">
         <div class="container-fluid">
-            <ul class="navbar-nav" id="navbar-nav">
+            <ul class="navbar-nav mt-5" id="navbar-nav">
                 
 
                 <li class="nav-item">

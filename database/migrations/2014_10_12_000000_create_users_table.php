@@ -23,7 +23,7 @@ class CreateUsersTable extends Migration
             $table->enum('gender', ['male', 'female', 'other'])->nullable();
             $table->string('phone_number')->nullable();
             $table->string('job_title')->nullable();
-            $table->integer('point')->default(50);
+            $table->integer('points')->default(50);
             $table->boolean('point_awarded')->default(false);
             $table->string('email')->unique();
             $table->enum('role',allowed: ['admin','user'])->default('user');

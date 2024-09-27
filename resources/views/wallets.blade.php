@@ -14,13 +14,13 @@
                 <div class="card-body">
                     <div class="d-flex align-items-center">
                         <div class="flex-grow-1 overflow-hidden">
-                            <p class="text-uppercase fw-medium text-muted text-truncate mb-0"> My Point</p>
+                            <p class="text-uppercase fw-medium text-muted text-truncate mb-0"> My Points</p>
                         </div>
                     </div>
                     <div class="d-flex align-items-end justify-content-between mt-4">
                         <div>
                             <h4 class="fs-22 fw-semibold ff-secondary mb-4">
-                                <span class="counter-value" data-target="165">{{ auth()->user()->point }}</span> points
+                                <span class="counter-value" data-target="165">{{ auth()->user()->points }}</span> points
                             </h4>
                             <a href="" class="text-decoration-underline">Get more points</a>
                         </div>
@@ -62,15 +62,17 @@
         @endif
 
         @if (auth()->user()->hasNullSpecificColumns())
-            <div class="card text-center p-3">
-                <div class="card-body">
-                    <img src="{{ URL::asset('build/images/giftbox.png') }}" alt="">
-                    <div class="mt-4">
-                        <h5>Profile Completion</h5>
-                        <p class="text-muted lh-base">Complete your profile to get 30 points.</p>
-                        <a href="/pages-profile-settings" class="bg-primary text-white px-3 py-2 rounded-pill">
-                            Complete Now
-                        </a>
+            <div class="col-xl-3 col-md-6">
+                <div class="card text-center p-3">
+                    <div class="card-body">
+                        <img src="{{ URL::asset('build/images/giftbox.png') }}" alt="">
+                        <div class="mt-4">
+                            <h5>Profile Completion</h5>
+                            <p class="text-muted lh-base">Complete your profile to get 30 points.</p>
+                            <a href="/pages-profile-settings" class="bg-primary text-white px-3 py-2 rounded-pill">
+                                Complete Now
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>

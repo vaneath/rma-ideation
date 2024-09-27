@@ -56,8 +56,13 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" data-bs-toggle="tab" href="#changePassword" role="tab">
+                            <a class="nav-link" data-bs-toggle="tab" href="#surveyHistory" role="tab">
                                 <i class="far fa-user"></i> Survey History
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" data-bs-toggle="tab" href="#changePassword" role="tab">
+                                <i class="far fa-user"></i> Change Password
                             </a>
                         </li>
                     </ul>
@@ -141,6 +146,50 @@
                                 <!--end row-->
                                 <button type="submit" class="btn btn-primary">Update</button>
                             </form>
+                        </div>
+                        <!--end tab-pane-->
+                        <div class="tab-pane" id="surveyHistory" role="tabpanel">
+                            <div class="row">
+                                <div class="col-lg-12">
+                                    <div class="card">
+                                        <div class="card-header">
+                                            <h5 class="card-title mb-0">Survey History</h5>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="table-responsive">
+                                                <table id="buttons-datatables" class="display table table-bordered"
+                                                    style="width:100%">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="text-center align-middle">Job Title</th>
+                                                            <th class="text-center align-middle">Car Fuel</th>
+                                                            <th class="text-center align-middle">Car Type</th>
+                                                            <th class="text-center align-middle">Car Make</th>
+                                                            <th class="text-center align-middle">Car Model</th>
+                                                            <th class="text-center align-middle">Car Color</th>
+                                                            <th class="text-center align-middle">Car Year</th>
+                                                            <th class="text-center align-middle">Submitted at</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        @foreach (Auth::user()->records as $records)
+                                                            <tr>
+                                                                <td>{{ $records->job_title }}</td>
+                                                                <td>{{ $records->car_fuel }}</td>
+                                                                <td>{{ $records->car_type }}</td>
+                                                                <td>{{ $records->car_make }}</td>
+                                                                <td>{{ $records->car_model }}</td>
+                                                                <td>{{ $records->car_color }}</td>
+                                                                <td>{{ $records->car_year }}</td>
+                                                                <td>{{ $records->created_at }}</td>
+                                                            </tr>
+                                                        @endforeach
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                         <!--end tab-pane-->
                         <div class="tab-pane" id="changePassword" role="tabpanel">
