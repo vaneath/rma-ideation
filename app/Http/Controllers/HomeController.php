@@ -31,11 +31,14 @@ class HomeController extends Controller
         if (view()->exists($request->path())) {
             return view($request->path());
         }
-        return abort(404);
+        abort(404);
     }
 
     public function root()
     {
+        if (request()->user()->isAdmin()) {
+            return redirect()->route('records.index');
+        }
         return view('wallets');
     }
 

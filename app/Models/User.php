@@ -25,7 +25,7 @@ class User extends Authenticatable
         'job_title',
         'phone_number',
         'email',
-        'point',
+        'points',
         'password',
         'avatar',
     ];

@@ -11,7 +11,7 @@
 
 @section('content')
     <div class="row">
-        <div class="col-xl-6">
+        <div class="col-xl-12">
             <div class="card">
                 <div class="card-body">
                     <form action="{{ route('records.store') }}" method="POST" class="form-steps" autocomplete="off">

@@ -11,23 +11,8 @@
     <div id="scrollbar">
         <div class="container-fluid">
             <ul class="navbar-nav mt-5" id="navbar-nav">
-                {{-- <li class="menu-title"><span>@lang('translation.menu')</span></li>
                 <li class="nav-item">
-                    <a class="nav-link menu-link" href="#sidebarDashboards" data-bs-toggle="collapse" role="button"
-                        aria-expanded="false" aria-controls="sidebarDashboards">
-                        <i class="ri-dashboard-2-line"></i> <span>@lang('translation.dashboards')</span>
-                    </a>
-                    <div class="collapse menu-dropdown" id="sidebarDashboards">
-                        <ul class="nav nav-sm flex-column">
-                            <li class="nav-item">
-                                <a href="wallets" class="nav-link">Wallets</a>
-                            </li>
-                        </ul>
-                    </div>
-                </li> <!-- end Dashboard Menu --> --}}
-
-                <li class="nav-item">
-                    <a href="wallets" class="nav-link">
+                    <a href="/wallets" class="nav-link">
                         <i class="ri-dashboard-2-line"></i>
                         <span>Wallets</span>
                     </a>
@@ -35,14 +20,14 @@
 
                 @admin
                     <li class="nav-item">
-                        <a href="records" class="nav-link">
+                        <a href="/records" class="nav-link">
                             <i class="ri-money-dollar-circle-line"></i>
                             <span>Customer Records</span>
                         </a>
                     </li>
 
                     <li class="nav-item">
-                        <a href="sections" class="nav-link">
+                        <a href="/sections" class="nav-link">
                             <i class="ri-apps-2-line"></i>
                             <span>Sections</span>
                         </a>

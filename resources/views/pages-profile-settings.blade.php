@@ -168,6 +168,7 @@
                                                             <th class="text-center align-middle">Car Model</th>
                                                             <th class="text-center align-middle">Car Color</th>
                                                             <th class="text-center align-middle">Car Year</th>
+                                                            <th class="text-center align-middle">Review Status</th>
                                                             <th class="text-center align-middle">Submitted at</th>
                                                         </tr>
                                                     </thead>
@@ -181,6 +182,15 @@
                                                                 <td>{{ $records->car_model }}</td>
                                                                 <td>{{ $records->car_color }}</td>
                                                                 <td>{{ $records->car_year }}</td>
+                                                                <td>
+                                                                    @if ($records->review_status == 'Pending')
+                                                                        <span class="badge bg-warning">Pending</span>
+                                                                    @elseif ($records->review_status == 'Approved')
+                                                                        <span class="badge bg-success">Approved</span>
+                                                                    @elseif ($records->review_status == 'Rejected')
+                                                                        <span class="badge bg-danger">Rejected</span>
+                                                                    @endif
+                                                                </td>
                                                                 <td>{{ $records->created_at }}</td>
                                                             </tr>
                                                         @endforeach
