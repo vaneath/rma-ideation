@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Record;
+use Illuminate\Support\Facades\Response;
 
 class RecordController extends Controller
 {
@@ -73,5 +74,21 @@ class RecordController extends Controller
         $record->save();
 
         return redirect()->back()->with('success', 'Record status updated successfully.');
+    }
+
+    public function exportCsv()
+    {
+        $records = Record::all();
+        $csvData = "No.,District,Driving Purpose,Driving Frequency,Favorite Car Feature,Car Fuel,Car Type,Car Make,Car Model,Car Color,Car Year,Review Status,Submitted at\n";
+
+        foreach ($records as $record) {
+            $csvData .= "{$record->id},{$record->district},{$record->driving_purpose},{$record->driving_frequency},{$record->favorite_car_feature},{$record->car_fuel},{$record->car_type},{$record->car_make},{$record->car_model},{$record->car_color},{$record->car_year},{$record->review_status},{$record->created_at}\n";
+        }
+
+        $response = Response::make($csvData, 200);
+        $response->header('Content-Type', 'text/csv');
+        $response->header('Content-Disposition', 'attachment; filename="records.csv"');
+
+        return $response;
     }
 }

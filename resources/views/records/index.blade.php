@@ -10,8 +10,9 @@
     <div class="row">
         <div class="col-lg-12">
             <div class="card">
-                <div class="card-header">
+                <div class="card-header d-flex justify-content-between align-items-center">
                     <h5 class="card-title mb-0">Customer Survey Records</h5>
+                    <a href="{{ route('records.exportCsv') }}" class="btn btn-primary">Export CSV</a>
                 </div>
                 <div class="card-body">
                     <table id="model-datatables" class="table table-bordered nowrap table-striped align-middle"

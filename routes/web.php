@@ -27,6 +27,7 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'root'])->name('roo
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('admin', [AdminController::class, 'index'])->name('admin.index');
     Route::get('records', [RecordController::class, 'index'])->name('records.index');
+    Route::get('/records/export', [RecordController::class, 'exportCsv'])->name('records.exportCsv');
     Route::resource('sections', SectionController::class);
     Route::resource('discounts', DiscountController::class)->except(['index', 'show']);
 });

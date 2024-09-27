@@ -102,14 +102,14 @@
                                     <h6 class="card-subtitle font-14 text-success">{{ $discount->point_cost }} points</h6>
                                 </div>
                                 <img class="img-fluid mx-auto object-fit-cover" src="{{ $discount->image_url }}"
-                                    width="100" alt="Card image cap">
+                                    alt="Card image cap">
                                 <div class="card-body">
                                     <p class="card-text">{{ $discount->description }}</p>
                                 </div>
                                 <div class="card-footer">
                                     <a href="javascript:void(0);" class="card-link link-success">Favorite <i
                                             class="ri-bookmark-line align-middle ms-1 lh-1"></i></a>
-                                    <a href="javascript:void(0);" class="card-link link-secondary">Read More <i
+                                    <a href="javascript:void(0);" class="card-link link-secondary">Redeem <i
                                             class="ri-arrow-right-s-line ms-1 align-middle lh-1"></i></a>
                                 </div>
                             </div>
