@@ -34,7 +34,10 @@ class RecordController extends Controller
     {
         try {
             $validatedData = $request->validate([
-                'job_title' => 'required|string|max:255',
+                'district' => 'required|in:Daun Penh,Chamkar Mon,Tuol Kork,Prampi Makara,Dangkao,Mean Chey,Russey Keo,Sen Sok,Pur Senchey,Chbar Ampov,Boeng Keng Kang,Chroy Changvar',
+                'driving_purpose' => 'required|in:Work/School,Travel,Vacation,Shopping,Family Trip,Pick Up,Delivery,Other',
+                'driving_frequency' => 'required|in:Daily,Once in a week,Several times a week,A few times per month,Rarely',
+                'favorite_car_feature' => 'required|in:Color,Speed,Fuel Efficiency,Comfort,Safety,Technology',
                 'car_fuel' => 'required|in:Gasoline,Diesel,Electric,Hybrid',
                 'car_type' => 'required|in:Sedan,SUV,Truck,Van,Sports',
                 'car_make' => 'required|string|max:255',

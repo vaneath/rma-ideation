@@ -11,7 +11,10 @@ class Record extends Model
     use HasFactory;
 
     protected $fillable = [
-        'job_title',
+        'district',
+        'driving_purpose',
+        'driving_frequency',
+        'favorite_car_feature',
         'car_fuel',
         'car_type',
         'car_make',

@@ -40,8 +40,23 @@
                             <tbody>
                                 <tr>
                                     <th scope="row" style="width: 200px;">
-                                        Job Title</th>
-                                    <td>{{ $record->job_title }}</td>
+                                        District</th>
+                                    <td>{{ $record->district }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"">
+                                        Driving Purpose</th>
+                                    <td>{{ $record->driving_purpose }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"">
+                                        Driving Frequency</th>
+                                    <td>{{ $record->driving_frequency }}</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row"">
+                                        Favorite Car Feature</th>
+                                    <td>{{ $record->favorite_car_feature }}</td>
                                 </tr>
                             </tbody>
                         </table>
